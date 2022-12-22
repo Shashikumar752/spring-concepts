@@ -9,15 +9,5 @@
     http://www.springframework.org/schema/aop
     http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
     ">
-<bean id="fortuneGreeting" class="com.shashi.spring.core.classes.FortuneGreeting"/>
-
-<bean id="footballCoach" class="com.shashi.spring.core.classes.FootballCoach" scope="prototype" init-method="initializeMethod" destroy-method="cleanUp">
-    <constructor-arg index="0" value="zidane"></constructor-arg>
-    <constructor-arg index="1" ref="fortuneGreeting" />
-</bean>
-
-<bean id="cricketCoach" class="com.shashi.spring.core.classes.CricketCoach" scope="singleton" init-method="initMethod" destroy-method="cleanUp">
-    <property name="name" value="Dravid"/>
-    <property name="greetingService" ref="fortuneGreeting"/>
-</bean>
+<context:component-scan base-package="com.shashi.spring.core" />
 </beans>

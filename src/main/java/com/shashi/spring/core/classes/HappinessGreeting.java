@@ -5,12 +5,12 @@ import org.springframework.stereotype.Component;
 import com.shashi.spring.core.interfaces.GreetingService;
 
 @Component
-public class FortuneGreeting implements GreetingService {
+public class HappinessGreeting implements GreetingService {
 
     @Override
     public void provideGreetings() {
-        System.out.println("you have a lucky day");
-        
+        // TODO Auto-generated method stub
+        System.out.println("May god bless you with a lot of hapiness");
     }
     
 }

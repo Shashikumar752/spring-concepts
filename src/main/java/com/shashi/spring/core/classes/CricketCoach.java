@@ -1,8 +1,18 @@
 package com.shashi.spring.core.classes;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
 import com.shashi.spring.core.interfaces.Coach;
 import com.shashi.spring.core.interfaces.GreetingService;
 
+@Component
+@Scope("prototype")
 public class CricketCoach implements Coach {
 
     private String name;
@@ -27,6 +37,8 @@ public class CricketCoach implements Coach {
         return greetingService;
     }
 
+    @Autowired
+    @Qualifier("fortuneGreeting")
     public void setGreetingService(GreetingService greetingService) {
         this.greetingService = greetingService;
     }
@@ -42,11 +54,12 @@ public class CricketCoach implements Coach {
         // TODO Auto-generated method stub
         greetingService.provideGreetings();
     }
-    
+    @PostConstruct
     public void initMethod(){
         System.out.println("initalizing the cricket coach object");
     }
 
+    @PreDestroy
     public void cleanUp(){
         System.out.println("cleaning the things before closeup of cricket coach application");
     }
