@@ -12,7 +12,7 @@ import com.shashi.spring.core.interfaces.Coach;
 import com.shashi.spring.core.interfaces.GreetingService;
 
 @Component
-@Scope("prototype")
+@Scope("singleton")
 public class CricketCoach implements Coach {
 
     private String name;
