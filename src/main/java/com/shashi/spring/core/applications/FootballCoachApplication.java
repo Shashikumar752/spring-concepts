@@ -7,8 +7,8 @@ import com.shashi.spring.core.interfaces.Coach;
 public class FootballCoachApplication {
     public static void main(String[] args) {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationcontext.xml");
-        FootballCoach fCoach = (FootballCoach) context.getBean("footballCoach", Coach.class);
-        FootballCoach fCoach1 = (FootballCoach) context.getBean("footballCoach", Coach.class);
+        Coach fCoach = (FootballCoach) context.getBean("fCoach", Coach.class);
+        Coach fCoach1 = (FootballCoach) context.getBean("fCoach", Coach.class);
         fCoach.provideGreetings();
         fCoach.startWorkout();
         boolean isEqual = fCoach==fCoach1;
